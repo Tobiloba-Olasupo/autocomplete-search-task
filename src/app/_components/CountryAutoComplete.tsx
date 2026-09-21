@@ -130,6 +130,8 @@ function CountryAutoComplete() {
                             ? <p>Loading..</p>
                             : error
                             ? <p className="text-center text-md text-gray-800">{error}</p>
+                            : results.length === 0 && !loading && !error
+                            ? <p className="text-center text-md text-gray-800">No countries found...</p>
                             : <ul className="flex flex-col gap-1" id={listBoxId} role="listbox">
                                 {
                                     displayedResults.map((country, index)=>(
